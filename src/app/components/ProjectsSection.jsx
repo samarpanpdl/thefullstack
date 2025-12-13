@@ -12,15 +12,7 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "/",
   },
-  {
-    id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
+  
   {
     id: 3,
     title: "E-commerce Application",
@@ -39,24 +31,7 @@ const projectsData = [
     gitUrl: "/",
     previewUrl: "/",
   },
-  {
-    id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
+  
 ];
 
 const ProjectsSection = () => {
@@ -65,6 +40,9 @@ const ProjectsSection = () => {
     const handleTagChange = (newTag) =>{
         setTag(newTag)
     }
+    const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
   return (
     <> 
     <h2>My Projects</h2>
@@ -75,7 +53,7 @@ const ProjectsSection = () => {
     </div>
     <div className="grid md:grid-cols-3 gap-8 md:gap-12">
         {
-        projectsData.map((project)=>
+        filteredProjects.map((project)=>
         <ProjectCard key={project.id}
         title={project.title} 
         description={project.description} 
