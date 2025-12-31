@@ -45,8 +45,8 @@ const UpSection = () => {
                 animate = {{opacity:1, scale:1}}
                 transition={{duration:0.5}}
             className='col-span-4'>
-                <div className='rounded-full bg-[#181818] w-[500px] h-[500px] sm: h-100px] relative'>
-                <Image src="/images/profile.jpg" alt="image" width={250} height={250} className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2' />
+                <div className='rounded-full bg-[#181818] w-[350px] h-[385px] sm:[h-100px] sm:ml-40 relative'>
+                <Image src="/images/profile2.jpg" alt="image" width={250} height={250} className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full' />
                 </div>
             </motion.div>
 
