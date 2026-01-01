@@ -62,13 +62,13 @@ const AboutSection = () => {
     }
   return (
     
-    <section ref={ref} className='text-white' id='about'>
+    <section ref={ref} className='text-[#ECEFF4]' id='about'>
         <motion.div 
             variants={cardVariants} initial="initial" animate={isinView ? "animate" : "initial"} transition={{duration:2.0}}
         className='md: grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16'>
         <Image src="/images/about-image.png" alt="about image" width={500} height={500} className='rounded-lg'/>
         <div className='mt-4 md:mt-0 text-left flex flex-col h-full'>
-            <h2 className='text-4xl font-bold text-white mb-4'>About Me</h2>
+            <h2 className='text-4xl font-bold text-[#ECEFF4] mb-4'>About Me</h2>
             <p className='text-base md:text-lg'>
                 I am a passionate developer with a strong foundation in Python, Django, and web development. I enjoy creating efficient and scalable solutions to complex problems. With a keen eye for detail and a commitment to high-quality code, I strive to deliver innovative applications that meet user needs and exceed expectations.
                 </p>

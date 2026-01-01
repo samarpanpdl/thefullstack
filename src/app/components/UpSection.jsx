@@ -1,58 +1,84 @@
-"use client"
-import React from 'react'
-import Image from 'next/image'
+"use client";
+import React from 'react';
+import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+
 const UpSection = () => {
   return (
-    <section>
-        <div className='grid grid-cols-1 lg:grid-cols-12 place-self-center gap-8 lg:gap-16 py-16 '>
-            <motion.div 
-                initial = {{opacity:0, scale:0.5}}
-                animate = {{opacity:1, scale:1}}
-                transition={{duration:0.5}}
-            className='col-span-8 place-self-center text-center sm:text-left justify-self-start'>
-                <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold'>
-                    <span>Hello, I am </span>
-                    <br/>
-                    <TypeAnimation
-                        sequence={[
-                        'Aashutosh',
-                            1000, // wait 1s before replacing "Mice" with "Hamsters"
-                        'Python Developer',
-                        1000,
-                        'Web Developer',
-                            1000,
-                        'django Developer',
-                            1000
-                                    ]}
-                        wrapper="span"
-                        speed={50}
-                        repeat={Infinity}
-                        />
-                    </h1>
-                <p className='text-[#ADB7BE] text-base lg:text-lg lg:text-xl mb-6'>
+    <section className="lg:py-16">
+      <div className='grid grid-cols-1 lg:grid-cols-12 gap-8 py-12 items-center'>
+        
+        {/* TEXT CONTENT */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          className='col-span-8 place-self-center text-center sm:text-left justify-self-start'
+        >
+          <h1 className='text-white mb-4 text-4xl sm:text-6xl lg:text-8xl lg:leading-normal font-extrabold'>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+              Hello, I'm{" "}
+            </span>
+            <br />
+            <TypeAnimation
+              sequence={[
+                'Aashutosh', 1000,
+                'Python Developer', 1000,
+                'Web Developer', 1000,
+                'Django Developer', 1000
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </h1>
+          
+          <p className='text-[#ECEFF4] text-base mb-6 lg:text-xl max-w-2xl'>
                                     I a motivated and skilled developer with expertise in Python, Django, and web development. I am passionate about creating efficient and scalable solutions to complex problems. With a strong foundation in programming and a keen eye for detail, I strive to deliver high-quality code and innovative applications.
-                    </p>
-                <div>
-                    <button className='px-6 py-3 w-full sm:w-fit rounded-full mx-4 bg-white hover:bg-slate-200 text-black'>Hire me</button>
-                    <button className='px-6 py-3 w-full sm:w-fit rounded-full mx-4 bg-transparent hover:bg-slate-800 text-white border border-white mt-3'>Download CV</button>
-                </div>
-            </motion.div>
 
-            <motion.div
-                initial = {{opacity:0, scale:0.5}}
-                animate = {{opacity:1, scale:1}}
-                transition={{duration:0.5}}
-            className='col-span-4'>
-                <div className='rounded-full bg-[#181818] w-[350px] h-[385px] sm:[h-100px] sm:ml-40 relative'>
-                <Image src="/images/profile2.jpg" alt="image" width={250} height={250} className='absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full' />
-                </div>
-            </motion.div>
+          </p>
 
-        </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className='px-6 py-3 w-full sm:w-fit rounded-full bg-white text-black font-medium hover:bg-slate-200 transition-colors'
+            >
+              Hire Me
+            </motion.button>
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className='px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white mt-3 sm:mt-0'
+            >
+              <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>
+                Download CV
+              </span>
+            </motion.button>
+          </div>
+        </motion.div>
+
+        {/* IMAGE CONTAINER */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className='col-span-4 place-self-center mt-4 lg:mt-0'
+        >
+          <div className='rounded-full bg-[#181818] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative overflow-hidden border-4 border-slate-800'>
+            <Image 
+              src="/images/profile2.jpg" 
+              alt="Aashutosh Profile" 
+              fill
+              className='object-cover'
+            />
+          </div>
+        </motion.div>
+
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default UpSection
+export default UpSection;
